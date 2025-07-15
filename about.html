@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Jane Doe</title>
+</head>
+<style>
+      /* common.css */
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    scroll-behavior: smooth;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #1a2a44; /* Navy */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #ff6f61; /* Coral accent */
+}
+
+.nav-links li a:focus {
+    outline: 2px solid #ff6f61;
+    outline-offset: 2px;
+}
+
+/* Footer */
+footer {
+    background-color: #1a2a44;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links li a:hover {
+    color: #ff6f61;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links li a img {
+    width: 24px;
+    filter: invert(1);
+}
+
+.social-links li a:hover img {
+    filter: invert(0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+</style>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><h1>OYESAGBA OLAMIDE - LAMZY</h1></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="about">
+        <h1>About Me</h1>
+        <p>Hey there! I’m OYESAGBA OLAMIDE, a passionate web designer and UI/UX enthusiast with a knack for crafting digital experiences that are as intuitive as they are stunning. With over 5 years in the tech world, I blend creativity and strategy to build websites and interfaces that users love to navigate. My toolkit? Figma, Adobe XD, HTML, CSS, and a sprinkle of JavaScript to bring ideas to life. I thrive on turning complex problems into sleek, user-friendly solutions—whether it’s designing responsive websites, prototyping seamless apps, or conducting user research to nail the perfect flow.</p>
+        <a href="contact.html" class="btn">CONTACT ME</a>
+    </section>
+    <footer>
+        <p>&copy; 2025 LAMZY</p>
+    </footer>
+</body>
+</html>

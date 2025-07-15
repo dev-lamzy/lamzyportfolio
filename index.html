@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of LAMZY, UI/UX Designer">
+    <title>LAMZY - Portfolio</title>
+</head>
+<style>
+    /* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    scroll-behavior: smooth;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #1a2a44; /* Navy */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #ff6f61; /* Coral accent */
+}
+
+.nav-links li a:focus {
+    outline: 2px solid #ff6f61;
+    outline-offset: 2px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1a2a44 0%, #3b4a6b 100%);
+    color: #fff;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.hero-content {
+    max-width: 600px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-cta .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    margin: 0 0.5rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-cta .primary {
+    background-color: #ff6f61;
+    color: #fff;
+}
+
+.hero-cta .secondary {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.hero-cta .btn:hover {
+    transform: scale(1.05);
+}
+
+.hero-cta .btn:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+.hero-image img {
+    max-width: 300px;
+    border-radius: 10px;
+    margin-left: 2rem;
+    animation: slideInRight 1s ease-in;
+}
+
+/* Featured Projects Section */
+.featured-projects {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.featured-projects h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.project-card p {
+    padding: 0 1rem 1rem;
+    color: #666;
+}
+
+.project-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem 1rem;
+    color: #ff6f61;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+/* About Teaser Section */
+.about-teaser {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.about-content .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff6f61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.about-content .btn:hover {
+    transform: scale(1.05);
+}
+
+.about-image img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+/* Services Teaser Section */
+.services-teaser {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.services-teaser h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    width: 50px;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    color: #666;
+}
+
+.services-teaser .btn {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff6f61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.services-teaser .btn:hover {
+    transform: scale(1.05);
+}
+
+/* Blog Teaser Section */
+.blog-teaser {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.blog-teaser h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.blog-card h3 {
+    font-size: 1.3rem;
+    padding: 1rem;
+}
+
+.blog-card p {
+    padding: 0 1rem 1rem;
+    color: #666;
+}
+
+.blog-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem 1rem;
+    color: #ff6f61;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.blog-card a:hover {
+    text-decoration: underline;
+}
+
+.blog-teaser .btn {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff6f61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.blog-teaser .btn:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Form (for contact.html) */
+.contact {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.contact h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact-form label {
+    font-weight: 600;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#contact-form button {
+    padding: 0.8rem;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#contact-form button:hover {
+    transform: scale(1.05);
+}
+
+#contact-form button:focus {
+    outline: 2px solid #1a2a44;
+    outline-offset: 2px;
+}
+
+/* Footer */
+footer {
+    background-color: #1a2a44;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links li a:hover {
+    color: #ff6f61;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links li a img {
+    width: 24px;
+    filter: invert(1);
+}
+
+.social-links li a:hover img {
+    filter: invert(0.8);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive Design (Mobile-First) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-image img {
+        margin-left: 0;
+        margin-top: 2rem;
+        max-width: 100%;
+    }
+
+    .about-teaser {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+}
+</style>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>OYESAGBA OLAMIDE ISRAEL - LAMZY</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>LAMZY: UI/UX Designer, WEB DESIGNER, GRAPHICS DESIGNER</h1>
+            <p>Crafting Seamless Digital Experiences</p>
+            <div class="hero-cta">
+                <a href="contact.html" class="btn primary">CONTACT ME</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="FIRSTPIC.JPG" alt="Jane Doe headshot or branding graphic">
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="featured-projects">
+        <h2>Selected Work</h2>
+        <div class="project-grid">
+            <article class="project-card">
+                <img src="daropeg.jpg" alt="Project 1 thumbnail">
+                <h3>School Website</h3>
+                <p>Designed a user-friendly website for a school.</p>
+                <a href="daropeg.com">View Project</a>
+            </article>
+            <article class="project-card">
+                <img src="blog.jpg" alt="Project 2 thumbnail">
+                <h3>Responsive Blog</h3>
+                <p>Created a responsive blog.</p>
+                <a href="lamzyblog.blogspot.com">View Project</a>
+            </article>
+            <article class="project-card">
+                <img src="graph design.jpg" alt="Project 3 thumbnail">
+                <h3>Graphics Design</h3>
+                <p>Crafting bold visuals..</p>
+                <a href="portfolio.html#project3">View Project</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- About Teaser Section -->
+    <section class="about-teaser">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>I'm a passionate designer with 2+ years of experience creating intuitive digital solutions.</p>
+            <a href="about.html" class="btn">Learn More</a>
+        </div>
+        <div class="about-image">
+            <img src="IMG_E6128.JPG" alt="Skills icons or photo">
+        </div>
+    </section>
+
+    <!-- Services Teaser Section -->
+    <section class="services-teaser">
+        <h2>What I Offer</h2>
+        <div class="services-grid">
+            <article class="service-card">
+                <img src="UI UX LOGO.jpg" alt="UI Design icon">
+                <h3>WEB Design</h3>
+                <p>Creating visually appealing and intuitive interfaces.</p>
+            </article>
+            <article class="service-card">
+                <img src="ux.jpg" alt="UX Research icon">
+                <h3>UX Research</h3>
+                <p>Conducting user research to inform design decisions.</p>
+            </article>
+            <article class="service-card">
+                <img src="consult.jpg" alt="Consulting icon">
+                <h3>Consulting</h3>
+                <p>Guiding businesses to improve their digital presence.</p>
+            </article>
+        </div>
+        <a href="services.html" class="btn">Explore Services</a>
+    </section>
+
+    <!-- Blog Teaser Section -->
+    <section class="blog-teaser">
+        <h2>Latest Insights</h2>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <img src="design 2.jpg" alt="Blog post 1 thumbnail">
+                <h3>Designing for Accessibility</h3>
+                <p>Learn how to make your designs inclusive for all users.</p>
+                <a href="https://www.browserstack.com/dg/design-accessibility?utm_source=google&utm_medium=cpc&utm_platform=paidads&utm_content=754707629707&utm_campaign=Search-NB-Global-Design-Accessibility-Micro-Journey&utm_campaigncode=design-accessibility+1010294&utm_term=e+design%20for%20accessibility&gad_source=1&gad_campaignid=22605686123&gbraid=0AAAAADD4yG3yGmSCIi5tj42EzQlWd8AxH&gclid=CjwKCAjw1dLDBhBoEiwAQNRiQWQZpD1-tSU3v7L98GwwnKyzNriIMYL1mwuTbfAkIucF3Pdkv6QXARoC76IQAvD_BwE">Read More</a>
+            </article>
+            <article class="blog-card">
+                <img src="ux 2.jpg" alt="Blog post 2 thumbnail">
+                <h3>Top UX Trends in 2025</h3>
+                <p>Explore the latest trends shaping user experience design.</p>
+                <a href="https://www.behance.net/gallery/209674381/Design-Trends-2025?locale=en_US">Read More</a>
+            </article>
+        </div>
+        <a href="blog.html" class="btn">Read More</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 LAMZY</p>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="social-links">
+                <li><a href="https://linkedin.com"><img src="linkedin icon.jpg" alt="LinkedIn"></a></li>
+                <li><a href="https://twitter.com"><img src="TWITTER LOGO.jpg" alt="Twitter"></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
